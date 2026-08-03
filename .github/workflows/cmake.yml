@@ -2,12 +2,15 @@ name: Build
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 env:
   BUILD_TYPE: Release
+  DEBIAN_FRONTEND: noninteractive
+  NEEDRESTART_MODE: l
+  NEEDRESTART_SUSPEND: y
 
 jobs:
   build:
@@ -15,16 +18,22 @@ jobs:
     strategy:
       matrix:
         config:
-          - { name: Windows MSVC, os: windows-latest }
+          # - { name: Windows MSVC, os: windows-latest }
           - { name: Linux GCC, os: ubuntu-latest }
-          - { name: Linux Clang, os: ubuntu-latest, flags: -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ }
-          - { name: MacOS XCode, os: macos-latest }
+          # - { name: Linux Clang, os: ubuntu-latest, flags: -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ }
+          # - { name: MacOS XCode, os: macos-latest }
 
     runs-on: ${{ matrix.config.os }}
 
     steps:
       - name: ${{ matrix.config.name }}
         uses: actions/checkout@v2
+
+      - if: ${{ matrix.config.os == 'ubuntu-latest' }}
+        name: Install nlohmann/json.hpp
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nlohmann-json3-dev
 
       - name: Configure CMake
         shell: bash
