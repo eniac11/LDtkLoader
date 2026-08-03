@@ -17,7 +17,7 @@ endif()
 # defer_on_missing_required_packages()
 
 find_package(nlohmann_json 3.11 REQUIRED)
-find_package(Doxygen OPTIONAL COMPONENTS dot)
+find_package(Doxygen OPTIONAL_COMPONENTS dot)
 
 
 include(CMakeDependentOption)
