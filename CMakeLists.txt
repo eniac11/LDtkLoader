@@ -9,12 +9,16 @@ if (NOT PROJECT_VERSION_TWEAK)
     set(PROJECT_VERSION_TWEAK 0)
 endif()
 
-include(FeatureFindPackage)
+# include(FeatureFindPackage)
 
-feature_find_package(nlohmann_json 3.11 REQUIRED)
-feature_find_package(Doxygen OPTIONAL COMPONENTS dot)
+# feature_find_package(nlohmann_json 3.11 REQUIRED)
+# feature_find_package(Doxygen OPTIONAL COMPONENTS dot)
 
-defer_on_missing_required_packages()
+# defer_on_missing_required_packages()
+
+find_package(nlohmann_json 3.11 REQUIRED)
+find_package(Doxygen OPTIONAL COMPONENTS dot)
+
 
 include(CMakeDependentOption)
 
