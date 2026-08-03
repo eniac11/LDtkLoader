@@ -1,4 +1,4 @@
-# LDtk Loader
+# LDtk Loader {#mainpage}
 
 [![LDtk Version](https://img.shields.io/badge/LDtk_version-1.5.3-default)](https://ldtk.io/json/)
 [![Build](https://github.com/Madour/LDtkLoader/actions/workflows/cmake.yml/badge.svg)](https://github.com/Madour/LDtkLoader/actions/workflows/cmake.yml)
@@ -16,7 +16,7 @@ For loading older versions, see the [Releases](https://github.com/Madour/LDtkLoa
 
 A taste of simplicity :
 
-```c++
+```cpp
 // load the file
 ldtk::Project ldtk_project;
 ldtk_project.loadFromFile("my_project.ldtk");
@@ -59,7 +59,7 @@ for (const ldtk::Entity& enemy : level1.getLayer("Entities").getEntitiesByName("
 Should work with any C++11 compiler.
 You can select Debug or Release mode when building.
 
-```shell
+```bash
 mkdir build && cd build
 cmake -DCMAKE_BUILD_TYPE={Debug|Release} ..
 cmake --build . --config {Debug|Release}
@@ -103,7 +103,7 @@ find_package(LDtkLoader 1.5)
 The `find_package` command will automatically get the correct library (Release or Debug)
 depending on your current CMake configuration.
 
-> [!NOTE]
+> [!note]
 > If LDtkLoader was installed at a custom path and CMake is unable to find the package, pass the `LDtkLoader_ROOT`
 > option to CMake, like this: `cmake -DLDtkLoader_ROOT=/install/path/LDtkLoader ..`.
 
@@ -120,7 +120,7 @@ API documentation can be found on the [**wiki**](https://github.com/Madour/LDtkL
 
 ### Demo
 
-> [!WARNING]
+> [!warning]
 > The demos below might be using an older version of the library.
 
 A demo using LDtkLoader with SFML can be found [**here**](https://github.com/Madour/LDtk-SFML-Game).
@@ -131,7 +131,7 @@ https://user-images.githubusercontent.com/11854124/122610077-57f48a00-d07f-11eb-
 
 ---
 
-A demo using LDtkLoader with Direct X11 can be found [**here**](https://github.com/dontpanic5/LDtk-D11/) (by @dontpanic5)
+A demo using LDtkLoader with Direct X11 can be found [**here**](https://github.com/dontpanic5/LDtk-D11/) (by \@dontpanic5)
 
 Here is a preview :
 
