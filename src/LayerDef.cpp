@@ -6,7 +6,9 @@
 
 #include "LDtkLoader/Project.hpp"
 
-#include "json.hpp"
+#ifdef NO_LDtkLoader_PRECOMIPLED_HEADERS
+#include <nlohmann/json.hpp>
+#endif
 
 using namespace ldtk;
 
