@@ -7,7 +7,7 @@
 #include <vector>
 
 #include "LDtkLoader/defs/FieldDef.hpp"
-#include "LDtkLoader/thirdparty/json_fwd.hpp"
+#include <nlohmann/json_fwd.hpp>
 
 #include "LDtkLoader/DataTypes.hpp"
 #include "LDtkLoader/Tileset.hpp"

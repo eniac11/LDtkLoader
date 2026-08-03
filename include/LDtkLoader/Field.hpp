@@ -5,14 +5,14 @@
 #include <iostream>
 #include <vector>
 
-#include "LDtkLoader/thirdparty/optional.hpp"
+#include <optional>
 
 namespace ldtk {
 
     template <typename T>
-    using optional = std::experimental::optional<T>;
+    using optional = std::optional<T>;
 
-    constexpr auto null = std::experimental::nullopt;
+    constexpr auto null = std::nullopt;
 
     struct IField
     {

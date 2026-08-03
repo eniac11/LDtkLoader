@@ -5,7 +5,7 @@
 #include <string>
 
 #include "LDtkLoader/defs/LayerDef.hpp"
-#include "LDtkLoader/thirdparty/json_fwd.hpp"
+#include <nlohmann/json_fwd.hpp>
 
 #include "LDtkLoader/DataTypes.hpp"
 #include "LDtkLoader/Entity.hpp"
